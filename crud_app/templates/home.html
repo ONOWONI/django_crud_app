@@ -3,7 +3,14 @@
     <h1>HOWDY</h1>
     <h1>{{dests.name}}</h1>
     <h1>{{dests.desc}}</h1>
-
+    {% if user.is_authenticated %}
+<p><a href='account/logout'>Logout</a></p>
+<p><a href='account/dummy_page'>Page</a></p>
+{% else %}
+<p><a href='account/login'>Login</a></p>
+<p><a href='account/register'>Register</a></p>
+<p><a href='account/dummy_page'>Page</a></p>
+{% endif %}
 
     <form action='add' method='post'>
         {% csrf_token %}
@@ -11,4 +18,10 @@
         Enter 2nd number : <input type='text' name='num2' placeholder='Second Number'>
         <input type='submit'>
     </form>
+
+    <div>
+        {% for message in messages %}
+            <h1> {{message}}</h1>
+        {% endfor %}
+    </div>
 {% endblock content %}
