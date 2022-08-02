@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for post in posts %}
+        {{post.title}}
+        {{post.content}}
+    {% endfor %}
+    <div>
+        {% for message in messages %}
+            <h1> {{message}}</h1>
+        {% endfor %}
+    </div>
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form action='create_post' method='post'>
+        {% csrf_token %}
+        Enter 1st number : <input type='text' name='title' placeholder='title'>
+        Enter 2nd number : <input type='text' name='content' placeholder='content'>
+        <input type='submit'>
+    </form>
+
+    <div>
+        {% for message in messages %}
+            <h1> {{message}}</h1>
+        {% endfor %}
+    </div>
+{% endblock content %}
