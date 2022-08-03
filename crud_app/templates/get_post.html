@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-    {% for post in posts %}
-        {{post.title}}
-        {{post.content}}
-    {% endfor %}
+    {% comment %} {% for post in posts %} {% endcomment %}
+        {{posts.title}}
+        {{posts.content}}
+    {% comment %} {% endfor %} {% endcomment %}
     <div>
         {% for message in messages %}
             <h1> {{message}}</h1>
